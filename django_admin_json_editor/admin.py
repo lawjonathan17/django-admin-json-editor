@@ -16,6 +16,9 @@ class JSONEditorWidget(forms.Widget):
         self._editor_options = editor_options or {}
 
     def render(self, name, value, attrs=None, renderer=None):
+        print("[ GIT ] django-admin-json-editor/ admin.py - JSONEditorWidget - render()")
+        print("[ GIT ] django-admin-json-editor/ admin.py - JSONEditorWidget - name" + name)
+        print(value)
         if callable(self._schema):
             schema = self._schema(self)
         else:
