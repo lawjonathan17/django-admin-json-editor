@@ -19,14 +19,17 @@ class JSONEditorWidget(forms.Widget):
         print("[ GIT ] django-admin-json-editor/ admin.py - JSONEditorWidget - render()")
         print("[ GIT ] django-admin-json-editor/ admin.py - JSONEditorWidget - name" + name)
         print(value)
+
         if callable(self._schema):
             schema = self._schema(self)
         else:
             schema = self._schema
 
+        print("[ GIT ] django-admin-json-editor/ admin.py - render() - 1" )
         schema['title'] = ' '
         schema['options'] = {'collapsed': int(self._collapsed)}
 
+        print("[ GIT ] django-admin-json-editor/ admin.py - render() - 2" )
         editor_options = {
             'theme': 'bootstrap3',
             'iconlib': 'fontawesome4',
@@ -34,12 +37,19 @@ class JSONEditorWidget(forms.Widget):
         }
         editor_options.update(self._editor_options)
 
+        print("[ GIT ] django-admin-json-editor/ admin.py - render() - 3" )
+        edit = json.dumps(editor_options)
+        print("Edit")
+        print(edit)
+
+        print("[ GIT ] django-admin-json-editor/ admin.py - render() - 4" )
         context = {
             'name': name,
             'data': value,
             'sceditor': int(self._sceditor),
             'editor_options': json.dumps(editor_options),
         }
+        print("[ GIT ] django-admin-json-editor/ admin.py - render() - 5" )
         return mark_safe(render_to_string(self.template_name, context))
 
     @property
