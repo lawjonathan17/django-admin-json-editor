@@ -20,9 +20,6 @@
     {% autoescape on %}\
     {% if data %}
         var json = {{ data|safe }};
-        // console.log("EDITOR.HTML - json2")
-        // console.log(json)
-        // So this thing right here is a <script> and /script is getting interpreted as
         {{ name }}_editor.setValue(json);
     {% endif %}
     {% endautoescape %}
