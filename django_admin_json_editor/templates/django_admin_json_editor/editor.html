@@ -12,8 +12,6 @@
         }
         else {
             var json = {{ name }}_editor.getValue();
-            console.log("EDITOR.HTML - json")
-            console.log(json)
             // Maybe add autoescape here? I don't think that will fix /script>
             document.getElementById("id_{{ name }}").value = JSON.stringify(json);
         }
