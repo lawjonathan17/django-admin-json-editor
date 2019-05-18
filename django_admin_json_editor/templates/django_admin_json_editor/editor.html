@@ -17,11 +17,11 @@
         }
     });
     // I think the bug might be right here
-    {% autoescape on %}\
-    {% if data %}
-        var json = {{ data|safe }};
-        {{ name }}_editor.setValue(json);
-    {% endif %}
+    {% autoescape on %}
+      {% if data %}
+          var json = {{ data|safe }};
+          {{ name }}_editor.setValue(json);
+      {% endif %}
     {% endautoescape %}
 </script>
 
