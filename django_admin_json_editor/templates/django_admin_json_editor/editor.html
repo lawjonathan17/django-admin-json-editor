@@ -19,12 +19,15 @@
         }
     });
     // I think the bug might be right here
+    {% autoescape on %}\
     {% if data %}
         var json = {{ data|safe }};
-        console.log("EDITOR.HTML - json2")
-        console.log(json)
+        // console.log("EDITOR.HTML - json2")
+        // console.log(json)
+        // So this thing right here is a <script> and /script is getting interpreted as
         {{ name }}_editor.setValue(json);
     {% endif %}
+    {% endautoescape %}
 </script>
 
 <textarea cols="40" id="id_{{ name }}" name="{{ name }}" rows="10" required=""
