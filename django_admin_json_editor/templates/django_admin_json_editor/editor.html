@@ -14,11 +14,15 @@
             var json = {{ name }}_editor.getValue();
             console.log("EDITOR.HTML - json")
             console.log(json)
+            // Maybe add autoescape here? I don't think that will fix /script>
             document.getElementById("id_{{ name }}").value = JSON.stringify(json);
         }
     });
+    // I think the bug might be right here
     {% if data %}
         var json = {{ data|safe }};
+        console.log("EDITOR.HTML - json2")
+        console.log(json)
         {{ name }}_editor.setValue(json);
     {% endif %}
 </script>
