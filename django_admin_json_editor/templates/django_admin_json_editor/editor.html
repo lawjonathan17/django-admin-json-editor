@@ -17,12 +17,10 @@
         }
     });
     // I think the bug might be right here
-    {% autoescape on %}
-      {% if data %}
-          var json = {{ data|safe }};
-          {{ name }}_editor.setValue(json);
-      {% endif %}
-    {% endautoescape %}
+    {% if data %}
+        var json = {{ data }};
+        {{ name }}_editor.setValue(json);
+    {% endif %}
 </script>
 
 <textarea cols="40" id="id_{{ name }}" name="{{ name }}" rows="10" required=""
