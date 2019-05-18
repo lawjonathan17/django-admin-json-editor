@@ -12,6 +12,8 @@
         }
         else {
             var json = {{ name }}_editor.getValue();
+            console.log("EDITOR.HTML - json")
+            console.log(json)
             document.getElementById("id_{{ name }}").value = JSON.stringify(json);
         }
     });

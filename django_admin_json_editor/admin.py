@@ -41,6 +41,7 @@ class JSONEditorWidget(forms.Widget):
         edit = json.dumps(editor_options)
         print("Edit")
         print(edit)
+        # editor_options is the theme, iconlib, schema, options
 
         print("[ GIT ] django-admin-json-editor/ admin.py - render() - 4" )
         context = {
