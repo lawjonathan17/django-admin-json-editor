@@ -18,11 +18,13 @@
     });
     // forsure bug is here when data is < /script>
     {% if data %} // if the value map is not empty
-        // var json = {{ data|safe }}; // Not escape - also removed |safe and it was really wrong`
+        var json = {{ data|safe }}; // Not escape - also removed |safe and it was really wrong`
         // var json = {{ data|escapejs }};
         // var json = {{ data|striptags }};
-        var json = {{ data|escape }};
+        // var json = {{ data|escape }};
         // |escapejs - didnt work
+        console.log("editor.html - json")
+        console.log(json);
         {{ name }}_editor.setValue(json); // hm it puts every in there
     {% endif %}
 </script>
