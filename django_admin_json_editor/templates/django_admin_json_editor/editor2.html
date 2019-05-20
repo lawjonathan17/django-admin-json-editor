@@ -1,6 +1,10 @@
-{% load static %}
-<script src="{% static 'editor2.js' %}"></script>
+<!-- {% load static %} -->
+<!-- <script src="{% static 'editor2.js' %}"></script> -->
 <!-- <script src="{% static 'django_admin_json_editor/editor2.js' %}"></script> -->
+
+<script>
+    {% include "editor2.js" with name={{ name }} editor_options = {{ editor_options }} sceditor = {{ sceditor }} data = {{ data }} %}
+</script>
 
 <div id="{{ name }}_editor"></div>
 
