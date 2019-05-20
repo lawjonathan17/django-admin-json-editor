@@ -5,24 +5,6 @@
 
 <div id="{{ name }}_editor"></div>
 
-<!-- include will still have the script tag in there -->
-<!-- <script>
-    {% include "editor2.js" with name="{{ name }}" editor_options="{{ editor_options }}" sceditor="{{ sceditor }}" data="{{ data }}" %}
-</script> -->
-
-
-<!--  below didn't work -->
-<!-- <script>
-    var name2 = {{ name }}
-    var editor_options2 = {{ editor_options }}
-    var sceditor2 = {{ sceditor }}
-    var data2 = {{ data2 }}
-    {% include "editor2.js" with name=name2 editor_options=editor_options2 sceditor=sceditor2 data=data2 %}
-</script> -->
-
-<!-- <script>
-    {% include "editor2.js" with name={{ name }} editor_options={{ editor_options }} sceditor={{ sceditor }} data={{ data }} %}
-</script> -->
 
 <textarea cols="40" id="id_{{ name }}" name="{{ name }}" rows="10" required=""
           style="display: none">{{ data|safe }}</textarea>
