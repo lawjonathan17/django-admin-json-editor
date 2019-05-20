@@ -6,7 +6,7 @@ from django.utils.safestring import mark_safe
 
 
 class JSONEditorWidget(forms.Widget):
-    template_name = 'django_admin_json_editor/editor.html'
+    template_name = 'django_admin_json_editor/editor2.html'
 
     def __init__(self, schema, collapsed=True, sceditor=False, editor_options=None):
         super(JSONEditorWidget, self).__init__()
