@@ -16,10 +16,10 @@
             document.getElementById("id_{{ name }}").value = JSON.stringify(json);
         }
     });
-    // I think the bug might be right here
-    {% if data %}
-        var json = {{ data }};
-        {{ name }}_editor.setValue(json);
+    // forsure bug is here when data is < /script>
+    {% if data %} // if the value map is not empty
+        var json = {{ data|safe }}; // Not escaped
+        {{ name }}_editor.setValue(json); // hm it puts every in there
     {% endif %}
 </script>
 

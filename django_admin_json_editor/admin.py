@@ -19,6 +19,9 @@ class JSONEditorWidget(forms.Widget):
         print("[ GIT ] django-admin-json-editor/ admin.py - JSONEditorWidget - render()")
         print("[ GIT ] django-admin-json-editor/ admin.py - JSONEditorWidget - name" + name)
         print(value)
+        # Maybe remove javascript section from the value dict here
+        if value and "javascript" in value:
+            del value["javascript"]
 
         if callable(self._schema):
             schema = self._schema(self)
