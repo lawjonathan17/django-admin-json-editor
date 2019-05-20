@@ -5,10 +5,9 @@
 
 <div id="{{ name }}_editor"></div>
 
-<!-- <script>
+<script>
     {% include "editor2.js" with name="{{ name }}" editor_options="{{ editor_options }}" sceditor="{{ sceditor }}" data="{{ data }}" %}
-
-</script> -->
+</script>
 
 <textarea cols="40" id="id_{{ name }}" name="{{ name }}" rows="10" required=""
           style="display: none">{{ data|safe }}</textarea>
