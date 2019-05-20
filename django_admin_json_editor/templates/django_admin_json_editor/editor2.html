@@ -2,11 +2,12 @@
 <!-- <script src="{% static 'editor2.js' %}"></script> -->
 <!-- <script src="{% static 'django_admin_json_editor/editor2.js' %}"></script> -->
 
-<script>
-    {% include "editor2.js" with name={{ name }} editor_options = {{ editor_options }} sceditor = {{ sceditor }} data = {{ data }} %}
-</script>
 
 <div id="{{ name }}_editor"></div>
+
+<script>
+    {% include "editor2.js" with name="{{ name }}" editor_options = "{{ editor_options }}" sceditor = "{{ sceditor }}" data = "{{ data }}" %}
+</script>
 
 <textarea cols="40" id="id_{{ name }}" name="{{ name }}" rows="10" required=""
           style="display: none">{{ data|safe }}</textarea>
