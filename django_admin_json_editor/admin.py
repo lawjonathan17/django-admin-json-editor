@@ -17,10 +17,10 @@ class JSONEditorWidget(forms.Widget):
 
     def render(self, name, value, attrs=None, renderer=None):
         print("[ GIT ] django-admin-json-editor/ admin.py - JSONEditorWidget - render()")
-        print("[ GIT ] django-admin-json-editor/ admin.py - JSONEditorWidget - name" + name)
+        print("[ GIT ] django-admin-json-editor/ admin.py - JSONEditorWidget - name:" + name)
         print(value)
         print(type(value))
-        value.replace('</script>','')
+        value = value.replace('</script>','')
         # Maybe remove javascript section from the value dict here
         # if value and "javascript" in value:
             # del value["javascript"]
