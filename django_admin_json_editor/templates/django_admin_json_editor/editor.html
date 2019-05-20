@@ -18,7 +18,9 @@
     });
     // forsure bug is here when data is < /script>
     {% if data %} // if the value map is not empty
-        var json = {{ data|safe|escapejs }}; // Not escape - also removed |safe and it was really wrong`
+        // var json = {{ data|safe }}; // Not escape - also removed |safe and it was really wrong`
+        var json = {{ data|escapejs }};
+        // |escapejs - didnt work
         {{ name }}_editor.setValue(json); // hm it puts every in there
     {% endif %}
 </script>
